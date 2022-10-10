@@ -1,24 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-function Form() {
+function Form(cardholderName, setCardholderName, handleCardholderNameChange, cardNumber, setCardNumber, handleCardNumberChange, month, setMonth, handleMonthChange, year, setYear, handleYearChange, cvc, setCVC, handleCVCChange, handleSubmit) {
 
-  const [cardholderName, setCardholderName] = useState("");
-  const [cardNumber, setCardNumber] = useState("");
-  const [month, setMonth] = useState("");
-  const [year, setYear] = useState("");
-  const [cvc, setCVC] = useState("");
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  }
-
-  const handleCardholderNameChange = (event) => {}
-  const handleCardNumberChange = (event) => {}
-  const handleMonthChange = (event) => {}
-  const handleYearChange = (event) => {}
-  const handleCVCChange = (event) => {}
-
-  return(
+  return (
     <div className="input">
       <form onSubmit={handleSubmit}>
         <label>
@@ -41,7 +25,7 @@ function Form() {
         <input type="submit" className="fullInput" name="comfirm" value="Confirm"></input>
       </form>
     </div>
-  )
+  );
 }
 
 export default Form;

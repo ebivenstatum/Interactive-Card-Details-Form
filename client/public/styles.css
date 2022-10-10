@@ -26,8 +26,14 @@
   background-color: --white;
 }
 
-.fullInput {}
+.fullInput {
+  width: 33%;
+}
 
-.halfInput {}
+.halfInput {
+  width: 16.5%;
+}
 
-.quarterInput {}
+.quarterInput {
+  width: 8.25%;
+}
