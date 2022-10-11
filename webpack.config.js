@@ -1,6 +1,5 @@
 // For node to know our absolute file path we will be using the internal module path
 const path = require('path');
-const Dotenv = require('dotenv-webpack');
 
 // Our export here is the configuration webpack will use
 module.exports = {
@@ -18,7 +17,6 @@ module.exports = {
     filename: 'bundle.js',
   },
   plugins: [
-    new Dotenv(),
   ],
   module: {
     // [rules] will determine the rules around those external modules
@@ -38,7 +36,15 @@ module.exports = {
         test: /\.(jpe?g|png|gif|svg|ico)$/i,
         loader: 'file-loader',
         options: {
-          name: '/public/icons/[name].[ext]',
+          name: '/public/images/[name].[ext]',
+        },
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'file-loader',
+        options: {
+          name: '/public/fonts/[name].[ext]',
+          outputPath: 'fonts/'
         },
       },
     ]
